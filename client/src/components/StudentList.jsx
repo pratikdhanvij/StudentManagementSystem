@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom'; 
 import HomeButton from './HomeButton';
+import Header from './Header';
 
 const StudentList = () => {
   const [students, setStudents] = useState([]);
@@ -35,11 +36,11 @@ const StudentList = () => {
   };
 
   return (
-    <div className="p-8 bg-slate-100 min-h-screen">
-      <HomeButton />
+    <div className=" bg-slate-100 min-h-screen">
+      <Header />
       
-      <h2 className="text-2xl font-bold mb-6 text-center">Student Search / Profile</h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <h2 className="text-2xl font-bold mb-8 text-center p-3">Student Search / Profile</h2>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 p-8">
         {students.length === 0 ? (
           <p className="col-span-3 text-center text-gray-500">No students found.</p>
         ) : (

@@ -5,6 +5,7 @@ import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 import HomeButton from './HomeButton';
+import Header from './Header';
 
 const StudentForm = () => {
   const navigate = useNavigate();
@@ -49,9 +50,10 @@ const StudentForm = () => {
   };
 
   return (
-    <div className="min-h-screen bg-slate-100 p-6">
-      <HomeButton />
-      <h2 className="text-2xl font-bold mb-4">{isEdit ? 'Edit Student' : 'New Student Registration'}</h2>
+    
+    <div className="min-h-screen bg-slate-100 ">
+      <Header/>
+      <h2 className="text-2xl font-bold mb-4 p-6">{isEdit ? 'Edit Student' : 'New Student Registration'}</h2>
       <form onSubmit={handleSubmit} className="max-w-md mx-auto p-4 bg-white shadow rounded">
         <input name="name" value={formData.name} onChange={handleChange} placeholder="Name" required className="w-full mb-2 p-2 border rounded" />
         <input name="age" value={formData.age} onChange={handleChange} placeholder="Age" required className="w-full mb-2 p-2 border rounded" />
@@ -64,6 +66,7 @@ const StudentForm = () => {
         </button>
       </form>
     </div>
+    
   );
 };
 
